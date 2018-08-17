@@ -1,0 +1,195 @@
+<head>
+    <title>CSS Grid Documentation</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav id="navbar">
+  <header>CSS Grid Layout Module</header>
+  <ul> 
+    <a class="nav-link" href="#Grid_Layout" rel="internal"><li>Grid Layout</li></a>
+    <a class="nav-link" href="#Browser_Support" rel="internal"><li>Browser Support</li></a>
+    <a class="nav-link" href="#Grid_Elements" rel="internal"><li>Grid Elements</li></a>
+    <a class="nav-link" href="#Display_Property" rel="internal"><li>Display Property</li></a>
+    <a class="nav-link" href="#Grid_Columns" rel="internal"><li>Grid Columns</li></a>
+    <a class="nav-link" href="#Grid_Rows" rel="internal"><li>Grid Rows</li></a>
+    <a class="nav-link" href="#Grid_Gaps" rel="internal"><li>Grid Gaps</li></a>
+    <a class="nav-link" href="#Grid_Lines" rel="internal"><li>Grid Lines</li></a>
+    <a class="nav-link" href="#The_Justify_Content_Property" rel="internal">
+     <li>The Justify Content Property</li>
+ </a>
+    <a class="nav-link" href="#The_Align_Content_Property" rel="internal"><li>The Align Content Property</li></a>
+    <a class="nav-link" href="#Reference" rel="internal"><li>Reference</li></a>
+  </ul>
+</nav>
+<!-- /Navigation -->
+<!--Main Content-->
+<main id="main-doc">
+  <section class="main-section" id="Grid_Layout">
+    <header>Grid Layout</header>
+    <article>  
+      <p>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.</p>
+      </article>
+    
+    </section>
+  <section class="main-section" id="Browser_Support">
+    <header>Browser Support</header>
+    <article>
+      <p>The grid properties are supported in all modern browsers.</p>
+      <div class="grid-container">
+  <div class="browser">Chrome</div>
+  <div class="browser">IE / Edge</div>
+  <div class="browser">Firefox</div>
+  <div class="browser">Safari</div>
+  <div class="browser">Opera</div>
+  <div class="version-number">57.0</div>
+  <div class="version-number">16.0</div>
+  <div class="version-number">52.0</div>
+  <div class="version-number">10</div>
+  <div class="version-number">44</div>
+</div>
+      </artice>
+    </section>
+  
+  <section class="main-section" id="Grid_Elements">
+    <header>Grid Elements</header>
+    <article>
+    <p>A grid layout consists of a parent element, with one or more child elements.</p>
+
+     <code>
+       &lt;div class="grid-container"&gt;<br>
+      &nbsp;&nbsp;&lt;div class="grid-item"&gt;1&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="grid-item"&gt;2&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="grid-item"&gt;3&lt;/div&gt;<br>
+      &nbsp;&nbsp;&lt;div class="grid-item"&gt;4&lt;/div&gt;<br> 
+      &lt;/div&gt;
+</div>
+      </code>
+    </article>
+    </section>
+  <section class="main-section" id="Display_Property">
+    <header>Display Property</header>
+    <article> 
+      An HTML element becomes a grid container by setting the <span>display</span> property to <span>grid</span> or <span>inline-grid</span>.
+  <code>.grid-container {<br>
+  display: grid;<br>
+}</code>
+      <code>.grid-container {<br>
+  display: inline-grid;<br>
+}</code>
+      <p>To make an HTML element behave as a grid container, you have to set the display property to grid or inline-grid.</p>
+
+      <p>Grid containers consist of grid items, placed inside columns and rows.</p>
+    </article>
+    </section>
+  <section class="main-section" id="Grid_Columns">
+    <header>Grid Columns</header>
+    <article>
+    <p>The vertical line of grid items are called columns.</p>
+      <p>The <span>grid-template-columns</span> property defines the number of columns in your grid layout, and it can define the width of each column.</p>
+
+<p>The value is a space-separated-list, where each value defines the length of the respective column.</p>
+
+<p>If you want your grid layout to contain 4 columns, specify the width of the 4 columns, or "auto" if all columns should have the same width.</p>
+      <p>Example: a 4 column grid.</p>      
+      <code>.grid-container {<br>
+  display: grid;
+  grid-template-columns: auto auto auto auto;<br>
+}</code>
+      </article> 
+    </section>
+  <section class="main-section" id="Grid_Rows">
+    <header>Grid Rows</header>
+    <article>
+      <p>The horizontal line of grid items are called rows.</p>
+      <p>The grid-template-rows property defines the height of each row.</p>
+      <p>The value is a space-separated-list, where each value defines the the height of the respective row:</p>
+      <code>.grid-container {<br>
+  display: grid;<br>
+  grid-template-rows: 80px 200px;<br>
+}</code
+    </article>
+    </section>
+  
+<section class="main-section" id="Grid_Gaps">
+    <header>Grid Gaps</header>
+    <article>
+     <p> You can adjust the gap size by using one of the following properties:</p>
+      <ul>
+        <li><span>grid-column-gap</span></li>
+        <li><span>grid-row-gap</span></li>
+        <li><span>grid-gap</span></li>
+      </ul>
+    </article>
+    </section>
+  <section class="main-section" id="Grid_Lines">
+    <header>Grid Lines</header>
+    <article>
+      <p>The line between columns are called column lines.</p>
+
+    <p>The line between rows are called row lines.</p>
+  
+    <p>Refer to line numbers when placing a grid item in a grid container. For example, place a grid item at column line 1, and let it end on column line 3:</p>
+    <code>
+      .item1 {<br>
+  grid-column-start: 1;<br>
+  grid-column-end: 3;<br>
+}
+    </code>  
+
+    </article>
+    </section>
+  <section class="main-section" id="The_Justify_Content_Property">
+    <header>The Justify Content Property</header>
+    <article>
+      <p>The <span>justify-content</span> property is used to <em>horizontally</em> align the whole grid inside the container.</p>
+
+      <p>The <span>justify-content</span> property can be:</p>
+      <ul>
+        <li><span>space-evenly</span></li>
+        <li><span>space-around</span></li>
+        <li><span>space-between</span></li>
+        <li><span>center</span></li>
+        <li><span>start</span></li>
+        <li><span>end</span></li>
+      </ul>
+      <code>
+        .grid-container {<br>
+  display: grid;<br>
+  justify-content: space-evenly;<br>
+}
+      </code>
+    </article>
+    </section>
+  <section class="main-section" id="The_Align_Content_Property">
+    <header>The Align Content Property</header>
+    <article>
+      <p>The align-content property is used to <em>vertically</em> align the whole grid inside the container.</p>
+        <p>The <span>align-content</span> property can be:</p>
+      <ul>
+        <li><span>space-evenly</span></li>
+        <li><span>space-around</span></li>
+        <li><span>space-between</span></li>
+        <li><span>center</span></li>
+        <li><span>start</span></li>
+        <li><span>end</span></li>
+      </ul>
+      <code>
+        .grid-container {<br>
+  display: grid;<br>
+  align-content: space-evenly;<br>
+}
+      </code>
+    </article>
+
+  <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+      <li>All the documentation in this page is taken from <a href="https://www.w3schools.com/" target="_blank">W3schools.</a>
+    </article>
+    </section>
+  <footer id="footer">
+  <p>Coded by Francesca Jenkins | freeCodeCamp 2018</p>
+  </footer>
+ </main>
+</body>
